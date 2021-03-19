@@ -11,7 +11,7 @@ services:
     image: base_image
     user: root
     volumes:
-      - .:/usr/app/
+      - ~/GH/py-greenhouse-main/py-greenhouse-main:/usr/app/
     working_dir: /usr/app/
     entrypoint: /bin/sh
 
@@ -19,7 +19,7 @@ services:
     image: base_image
     user: root
     volumes:
-      - .:/usr/app/
+      - ~/GH/py-greenhouse-main/py-greenhouse-main:/usr/app/
     working_dir: /usr/app/
     command: "python3"
 
@@ -27,7 +27,7 @@ services:
     image: base_image
     user: root
     volumes:
-      - .:/usr/app/
+      - ~/GH/py-greenhouse-main/py-greenhouse-main:/usr/app/
     working_dir: /usr/app/
     command: "jupyter lab --ip=0.0.0.0 --port=8888 --allow-root --no-browser"
     ports:
@@ -37,6 +37,6 @@ services:
     image: base_image
     user: root
     volumes:
-      - .:/usr/app/
+      - ~/GH/py-greenhouse-main/py-greenhouse-main:/usr/app/
     working_dir: /usr/app/
     command: "pytest --verbose"
