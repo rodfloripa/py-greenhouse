@@ -30,6 +30,10 @@ class Node(object):
             self.color = 0
         else:
             self.color = cp.Variable(pos=True)
+            
+    # Returns the node's internal constraints.
+    def constraints(self):
+        return [self.color >=0, self.color <= 5]
 
 edges = [(1,0),(1,2),(1,3)]
 n_nodes = 4
