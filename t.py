@@ -1,9 +1,8 @@
 
 # Minimum coloring graph
 
-import numpy as np
 import cvxpy as cp
-import matplotlib.pyplot as plt
+
 
 class Edge(object):
     """ An  edge. """
