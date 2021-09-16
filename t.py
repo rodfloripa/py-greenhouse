@@ -17,27 +17,23 @@ class Edge(object):
 
     # Returns the edge's internal constraints.
     def constraints(self):
-        #return [cp.pos(self.c2[0] - self.c1[0]) >=1]
+        
         return [cp.pos(self.c1[0] - self.c2[0]) >= 1]
     
 class Node(object):
     """ A node with accumulation. """
     def __init__(self, number):
         self.number = number
-        #self.color = cp.Variable(nonneg=True)
-        #self.color = Z
+        
         if number == max_neigb:
             self.color = 0
         else:
             self.color = cp.Variable(integer=True)
 
 edges = [(1,0),(1,2),(1,3)]
-#edges = [(0,1),(1,2),(2,3),(3,4),(4,5),(5,6),(1,5),(2,4),(2,6),(1,6),(4,6),(0,5)]
 n_nodes = 4
-#n_nodes = 7
 nodes_lst = []
 n_edges = 3
-#n_edges = 12
 edges_lst = []
 max_neigb = []
 
