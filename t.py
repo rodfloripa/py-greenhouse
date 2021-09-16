@@ -50,7 +50,7 @@ for i in range(0,n_edges):
 for i in range(0,n_edges):
     edges_lst[i].connect(nodes_lst[edges[i][0]],nodes_lst[edges[i][1]])    
 
-""" should miniize the sum of node colors """    
+""" should minimize the sum of node colors """    
 sum_ = []
 for i in range(0,n_edges):
     sum_.append(edges_lst[i].c1[0])
