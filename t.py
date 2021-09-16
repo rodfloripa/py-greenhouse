@@ -19,7 +19,7 @@ class Edge(object):
     """Returns the edge's internal constraints."""
     def constraints(self):
         # adjacent nodes can't have the same color,taking the absolute value of the difference
-        return [cp.pos(self.c1[0] - self.c2[0]) >= 1]
+        return [cp.abs(self.c1[0] - self.c2[0]) >= 1]
     
 class Node(object):
     """ A node with a variable(color) """
@@ -29,7 +29,7 @@ class Node(object):
         if number == max_neigb:
             self.color = 0
         else:
-            self.color = cp.Variable(integer=True)
+            self.color = cp.Variable(pos=True)
 
 edges = [(1,0),(1,2),(1,3)]
 n_nodes = 4
