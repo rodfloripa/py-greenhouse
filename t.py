@@ -18,7 +18,7 @@ class Edge(object):
 
     """Returns the edge's internal constraints."""
     def constraints(self):
-        # adjacent nodes can't have the same color
+        # adjacent nodes can't have the same color,taking the absolute value of the difference
         return [cp.pos(self.c1[0] - self.c2[0]) >= 1]
     
 class Node(object):
