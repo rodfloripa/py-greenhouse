@@ -1,10 +1,12 @@
 
+# Minimum coloring graph
+
 import numpy as np
 import cvxpy as cp
 import matplotlib.pyplot as plt
 
 class Edge(object):
-    """ An undirected, capacity limited edge. """
+    """ An  edge. """
     def __init__(self):
         self.c1 = []
         self.c2 = []
@@ -17,14 +19,14 @@ class Edge(object):
 
     # Returns the edge's internal constraints.
     def constraints(self):
-        
+        # adjacent nodes can't have the same color
         return [cp.pos(self.c1[0] - self.c2[0]) >= 1]
     
 class Node(object):
-    """ A node with accumulation. """
+    """ A node with a variable """
     def __init__(self, number):
         self.number = number
-        
+        # the color of the most connected node should be 0
         if number == max_neigb:
             self.color = 0
         else:
@@ -48,6 +50,7 @@ for i in range(0,n_edges):
 for i in range(0,n_edges):
     edges_lst[i].connect(nodes_lst[edges[i][0]],nodes_lst[edges[i][1]])    
 
+# should miniize the sum of node colors    
 sum_ = []
 for i in range(0,n_edges):
     sum_.append(edges_lst[i].c1[0])
