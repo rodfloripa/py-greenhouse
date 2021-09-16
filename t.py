@@ -23,7 +23,7 @@ class Edge(object):
         return [cp.pos(self.c1[0] - self.c2[0]) >= 1]
     
 class Node(object):
-    """ A node with a variable """
+    """ A node with a variable(color) """
     def __init__(self, number):
         self.number = number
         """ the color of the most connected node should be 0 """
